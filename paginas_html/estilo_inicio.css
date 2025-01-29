@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    background-color: #eaeaea;
+}
+.pageHeader{
+    text-align: center;
+    position: fixed;
+    top: 0;
+}
