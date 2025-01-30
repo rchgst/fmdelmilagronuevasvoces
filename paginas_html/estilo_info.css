@@ -21,6 +21,10 @@
     color: #555;
 }
 
+span{
+    font: bold;
+}
+
 .about-content .about-item {
     display: flex;
     align-items: center;

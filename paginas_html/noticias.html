@@ -1,158 +1,126 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="es">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W64X5Z86S9"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-W64X5Z86S9');
-    </script>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
-    <!-- Estilos -->
-    <link rel="stylesheet" href="estilo_noti.css">
-
-    <title>noticias</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Línea de Tiempo Interactiva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.12.0/framer-motion.umd.min.js"></script>
+    <style>
+        .timeline {
+            position: relative;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: #4A90E2;
+            transform: translateX(-50%);
+        }
+        .timeline-item, .about-item, .gallery-item {
+            opacity: 0;
+            transform: translateY(50px) scale(0.95);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .timeline-item.visible, .about-item.visible, .gallery-item.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 10px;
+            padding-bottom: 10px;
+        }
+        .gallery-item {
+            flex: none;
+            scroll-snap-align: center;
+            width: 300px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-
-<body>
-    <header>
-        <h1>Portal de noticias</h1>
-        <p>
-            en esta sección encontraras las noticias que dimos en el programa anterior y las noticias que daremos en
-            nuestro proximo programa
-        </p>
-    </header>
-    <div class="wrap">
-        <div class="box">
-            <div class="box-top">
-                <div class="title-flex">
-                    <h3 class="box-title">Titulo de noticia</h3>
-                    <p class="user-follow-info">categoria</p>
+<body class="bg-gray-100 py-10">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Historia de la Radio y de FM del miilagro</h2>
+        <div class="timeline">
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 text-right pr-8">
+                    <h3 class="text-lg font-semibold">1920 - Primera Emisión</h3>
+                    <p class="text-gray-600">La primera transmisión de radio se realizó en Argentina con la ópera Parsifal.</p>
                 </div>
-                <p class="description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit<br />
-                    Architecto nam labore ut et, debitis nulla <br />
-                    maiores eius pariatur neque nemo rem eos nesciunt eaque sequi deleniti voluptatibus excepturi
-                    repudiandae corrupti?
-                </p>
-            </div>
-            <a href="#" class="button">Mas informacion</a>
-        </div>
-        <div class="box">
-            <div class="box-top">
-                <div class="title-flex">
-                    <h3 class="box-title">Titulo de noticia</h3>
-                    <p class="user-follow-info">categoria</p>
+                <div class="w-1/2 flex justify-center">
                 </div>
-                <p class="description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit<br />
-                    Architecto nam labore ut et, debitis nulla <br />
-                    maiores eius pariatur neque nemo rem eos nesciunt eaque sequi deleniti voluptatibus excepturi
-                    repudiandae corrupti?
-                </p>
             </div>
-            <a href="#" class="button">Mas informacion</a>
-        </div>
-        <div class="box">
-            <div class="box-top">
-                <div class="title-flex">
-                    <h3 class="box-title">Titulo de noticia</h3>
-                    <p class="user-follow-info">categoria</p>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 flex justify-center">
                 </div>
-                <p class="description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit<br />
-                    Architecto nam labore ut et, debitis nulla <br />
-                    maiores eius pariatur neque nemo rem eos nesciunt eaque sequi deleniti voluptatibus excepturi
-                    repudiandae corrupti?
-                </p>
-            </div>
-            <a href="#" class="button">Mas informacion</a>
-        </div>
-        <div class="box">
-            <div class="box-top">
-                <div class="title-flex">
-                    <h3 class="box-title">Titulo de noticia</h3>
-                    <p class="user-follow-info">categoria</p>
+                <div class="w-1/2 pl-8">
+                    <h3 class="text-lg font-semibold">1930 - Radios Comerciales</h3>
+                    <p class="text-gray-600">Surgen las primeras emisoras comerciales con programación regular.</p>
                 </div>
-                <p class="description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit<br />
-                    Architecto nam labore ut et, debitis nulla <br />
-                    maiores eius pariatur neque nemo rem eos nesciunt eaque sequi deleniti voluptatibus excepturi
-                    repudiandae corrupti?
-                </p>
             </div>
-            <a href="#" class="button">Mas informacion</a>
         </div>
     </div>
-    <div class="wrap">
-        <div class="box">
-            <div class="box-top">
-                <div class="title-flex">
-                    <h3 class="box-title">Titulo de noticia</h3>
-                    <p class="user-follow-info">categoria</p>
+    
+    <!--<div class="container mx-auto px-4 mt-20">
+        <h2 class="text-3xl font-bold text-center mb-8">Nuestra Emisora</h2>
+        <div class="space-y-8">
+            <div class="about-item bg-white p-6 rounded-lg shadow-md flex items-center">
+                <img src="studio.jpg" alt="Estudio de radio" class="w-32 h-32 rounded-lg shadow-md mr-4">
+                <div>
+                    <h3 class="text-xl font-semibold">Historia de la Emisora</h3>
+                    <p class="text-gray-600">Nuestra radio nació con la misión de conectar a la audiencia con la mejor música y el contenido más relevante.</p>
                 </div>
-                <p class="description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit<br />
-                    Architecto nam labore ut et, debitis nulla <br />
-                    maiores eius pariatur neque nemo rem eos nesciunt eaque sequi deleniti voluptatibus excepturi
-                    repudiandae corrupti?
-                </p>
             </div>
-            <a href="#" class="button">Mas informacion</a>
+            <div class="about-item bg-white p-6 rounded-lg shadow-md flex items-center">
+                <img src="../imagenes_pag/Imagen de WhatsApp 2025-01-27 a las 13.29.02_8ae26126.jpg" alt="Equipo de la emisora" class="w-32 h-32 rounded-lg shadow-md mr-4">
+                <div>
+                    <h3 class="text-xl font-semibold">Nuestro Equipo</h3>
+                    <p class="text-gray-600">Contamos con un grupo de locutores apasionados y profesionales que dan vida a cada emisión.</p>
+                </div>
+            </div>
         </div>
-        <div class="box">
-            <div class="box-top">
-                <div class="title-flex">
-                    <h3 class="box-title">Titulo de noticia</h3>
-                    <p class="user-follow-info">categoria</p>
-                </div>
-                <p class="description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit<br />
-                    Architecto nam labore ut et, debitis nulla <br />
-                    maiores eius pariatur neque nemo rem eos nesciunt eaque sequi deleniti voluptatibus excepturi
-                    repudiandae corrupti?
-                </p>
-            </div>
-            <a href="#" class="button">Mas informacion</a>
-        </div>
-        <div class="box">
-            <div class="box-top">
-                <div class="title-flex">
-                    <h3 class="box-title">Titulo de noticia</h3>
-                    <p class="user-follow-info">categoria</p>
-                </div>
-                <p class="description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit<br />
-                    Architecto nam labore ut et, debitis nulla <br />
-                    maiores eius pariatur neque nemo rem eos nesciunt eaque sequi deleniti voluptatibus excepturi
-                    repudiandae corrupti?
-                </p>
-            </div>
-            <a href="#" class="button">Mas informacion</a>
-        </div>
-        <div class="box">
-            <div class="box-top">
-                <div class="title-flex">
-                    <h3 class="box-title">Titulo de noticia</h3>
-                    <p class="user-follow-info">categoria</p>
-                </div>
-                <p class="description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit<br />
-                    Architecto nam labore ut et, debitis nulla <br />
-                    maiores eius pariatur neque nemo rem eos nesciunt eaque sequi deleniti voluptatibus excepturi
-                    repudiandae corrupti?
-                </p>
-            </div>
-            <a href="#" class="button">Mas informacion</a>
+        
+    </div>-->
+    
+    <div class="container mx-auto px-4 mt-20">
+        <h2 class="text-3xl font-bold text-center mb-8">Galería</h2>
+        <div class="gallery">
+            <div class="gallery-item" style="background-image: url('photo1.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('photo2.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('photo3.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('photo4.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('photo5.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('photo6.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('photo7.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('photo8.jpg');"></div>
         </div>
     </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const items = document.querySelectorAll(".timeline-item, .about-item, .gallery-item");
+            function checkVisibility() {
+                const triggerBottom = window.innerHeight * 0.9;
+                items.forEach(item => {
+                    const itemTop = item.getBoundingClientRect().top;
+                    if (itemTop < triggerBottom) {
+                        item.classList.add("visible");
+                    }
+                });
+            }
+            window.addEventListener("scroll", checkVisibility);
+            checkVisibility();
+        });
+    </script>
 </body>
-
 </html>
