@@ -45,12 +45,34 @@
             background-position: center;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery-item:hover {
+            transform: scale(1.1);
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            text-align: center;
+            padding: 5px;
+            font-size: 14px;
+            border-radius: 0 0 10px 10px;
+        }
+        .timeline-item img {
+            transition: transform 0.3s ease-in-out;
+        }
+        .timeline-item img:hover {
+            transform: scale(1.2);
         }
     </style>
 </head>
 <body class="bg-gray-100 py-10">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-8">Historia de la Radio y de FM del miilagro</h2>
+        <h2 class="text-3xl font-bold text-center mb-8">Historia de la Radio</h2>
         <div class="timeline">
             <div class="timeline-item relative flex items-center mb-8">
                 <div class="w-1/2 text-right pr-8">
@@ -58,10 +80,12 @@
                     <p class="text-gray-600">La primera transmisión de radio se realizó en Argentina con la ópera Parsifal.</p>
                 </div>
                 <div class="w-1/2 flex justify-center">
+                    <img src="radio-1920.jpg" alt="Radio 1920" class="w-32 h-32 rounded-lg shadow-md">
                 </div>
             </div>
             <div class="timeline-item relative flex items-center mb-8">
                 <div class="w-1/2 flex justify-center">
+                    <img src="radio-1930.jpg" alt="Radio 1930" class="w-32 h-32 rounded-lg shadow-md">
                 </div>
                 <div class="w-1/2 pl-8">
                     <h3 class="text-lg font-semibold">1930 - Radios Comerciales</h3>
@@ -71,38 +95,21 @@
         </div>
     </div>
     
-    <!--<div class="container mx-auto px-4 mt-20">
-        <h2 class="text-3xl font-bold text-center mb-8">Nuestra Emisora</h2>
-        <div class="space-y-8">
-            <div class="about-item bg-white p-6 rounded-lg shadow-md flex items-center">
-                <img src="studio.jpg" alt="Estudio de radio" class="w-32 h-32 rounded-lg shadow-md mr-4">
-                <div>
-                    <h3 class="text-xl font-semibold">Historia de la Emisora</h3>
-                    <p class="text-gray-600">Nuestra radio nació con la misión de conectar a la audiencia con la mejor música y el contenido más relevante.</p>
-                </div>
-            </div>
-            <div class="about-item bg-white p-6 rounded-lg shadow-md flex items-center">
-                <img src="../imagenes_pag/Imagen de WhatsApp 2025-01-27 a las 13.29.02_8ae26126.jpg" alt="Equipo de la emisora" class="w-32 h-32 rounded-lg shadow-md mr-4">
-                <div>
-                    <h3 class="text-xl font-semibold">Nuestro Equipo</h3>
-                    <p class="text-gray-600">Contamos con un grupo de locutores apasionados y profesionales que dan vida a cada emisión.</p>
-                </div>
-            </div>
-        </div>
-        
-    </div>-->
-    
     <div class="container mx-auto px-4 mt-20">
         <h2 class="text-3xl font-bold text-center mb-8">Galería</h2>
         <div class="gallery">
-            <div class="gallery-item" style="background-image: url('photo1.jpg');"></div>
-            <div class="gallery-item" style="background-image: url('photo2.jpg');"></div>
-            <div class="gallery-item" style="background-image: url('photo3.jpg');"></div>
-            <div class="gallery-item" style="background-image: url('photo4.jpg');"></div>
-            <div class="gallery-item" style="background-image: url('photo5.jpg');"></div>
-            <div class="gallery-item" style="background-image: url('photo6.jpg');"></div>
-            <div class="gallery-item" style="background-image: url('photo7.jpg');"></div>
-            <div class="gallery-item" style="background-image: url('photo8.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('photo1.jpg');">
+                <div class="gallery-caption">Locutor en vivo</div>
+            </div>
+            <div class="gallery-item" style="background-image: url('photo2.jpg');">
+                <div class="gallery-caption">Estudio de grabación</div>
+            </div>
+            <div class="gallery-item" style="background-image: url('photo3.jpg');">
+                <div class="gallery-caption">Equipo de producción</div>
+            </div>
+            <div class="gallery-item" style="background-image: url('photo4.jpg');">
+                <div class="gallery-caption">Cabina de transmisión</div>
+            </div>
         </div>
     </div>
     
