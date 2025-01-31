@@ -16,57 +16,50 @@
             top: 0;
             left: 50%;
             width: 4px;
-            height: 100%;
+            height: 0;
             background: #4A90E2;
             transform: translateX(-50%);
+            transition: height 1s ease-out;
         }
-        .timeline-item, .about-item, .gallery-item {
+        .timeline-item, .about-item {
             opacity: 0;
             transform: translateY(50px) scale(0.95);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .timeline-item.visible, .about-item.visible, .gallery-item.visible {
+        .timeline-item.visible, .about-item.visible {
             opacity: 1;
             transform: translateY(0) scale(1);
         }
-        .gallery {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 10px;
-            padding-bottom: 10px;
+        .timeline.visible::before {
+            height: 100%;
         }
-        .gallery-item {
-            flex: none;
-            scroll-snap-align: center;
-            width: 300px;
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .image-container {
             position: relative;
-            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
         }
-        .gallery-item:hover {
-            transform: scale(1.1);
+        .image-container img {
+            transition: opacity 0.3s ease-in-out;
         }
-        .gallery-caption {
+        .image-description {
             position: absolute;
-            bottom: 0;
+            top: 0;
+            left: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
+            height: 100%;
+            background: transparent;
+            color: #2c2c2c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 5px;
-            font-size: 14px;
-            border-radius: 0 0 10px 10px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
-        .timeline-item img {
-            transition: transform 0.3s ease-in-out;
+        .image-container.clicked img {
+            opacity: 0.2;
         }
-        .timeline-item img:hover {
-            transform: scale(1.2);
+        .image-container.clicked .image-description {
+            opacity: 1;
         }
     </style>
 </head>
@@ -80,12 +73,18 @@
                     <p class="text-gray-600">La primera transmisión de radio se realizó en Argentina con la ópera Parsifal.</p>
                 </div>
                 <div class="w-1/2 flex justify-center">
-                    <img src="radio-1920.jpg" alt="Radio 1920" class="w-32 h-32 rounded-lg shadow-md">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1920.jpg" alt="Radio 1920" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">La primera transmisión radial de la historia.</div>
+                    </div>
                 </div>
             </div>
             <div class="timeline-item relative flex items-center mb-8">
                 <div class="w-1/2 flex justify-center">
-                    <img src="radio-1930.jpg" alt="Radio 1930" class="w-32 h-32 rounded-lg shadow-md">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1930.jpg" alt="Radio 1930" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">Inicio de las radios comerciales con programación regular.</div>
+                    </div>
                 </div>
                 <div class="w-1/2 pl-8">
                     <h3 class="text-lg font-semibold">1930 - Radios Comerciales</h3>
@@ -95,27 +94,9 @@
         </div>
     </div>
     
-    <div class="container mx-auto px-4 mt-20">
-        <h2 class="text-3xl font-bold text-center mb-8">Galería</h2>
-        <div class="gallery">
-            <div class="gallery-item" style="background-image: url('photo1.jpg');">
-                <div class="gallery-caption">Locutor en vivo</div>
-            </div>
-            <div class="gallery-item" style="background-image: url('photo2.jpg');">
-                <div class="gallery-caption">Estudio de grabación</div>
-            </div>
-            <div class="gallery-item" style="background-image: url('photo3.jpg');">
-                <div class="gallery-caption">Equipo de producción</div>
-            </div>
-            <div class="gallery-item" style="background-image: url('photo4.jpg');">
-                <div class="gallery-caption">Cabina de transmisión</div>
-            </div>
-        </div>
-    </div>
-    
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const items = document.querySelectorAll(".timeline-item, .about-item, .gallery-item");
+            const items = document.querySelectorAll(".timeline-item, .about-item");
             function checkVisibility() {
                 const triggerBottom = window.innerHeight * 0.9;
                 items.forEach(item => {
@@ -124,10 +105,14 @@
                         item.classList.add("visible");
                     }
                 });
+                document.querySelector(".timeline").classList.add("visible");
             }
             window.addEventListener("scroll", checkVisibility);
             checkVisibility();
         });
+        function toggleDescription(element) {
+            element.classList.toggle("clicked");
+        }
     </script>
 </body>
 </html>
