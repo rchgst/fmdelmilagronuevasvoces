@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
         .timeline {
             position: relative;
         }
+
         .timeline::before {
             content: '';
             position: absolute;
@@ -21,25 +23,33 @@
             transform: translateX(-50%);
             transition: height 1s ease-out;
         }
-        .timeline-item, .about-item {
+
+        .timeline-item,
+        .about-item {
             opacity: 0;
             transform: translateY(50px) scale(0.95);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .timeline-item.visible, .about-item.visible {
+
+        .timeline-item.visible,
+        .about-item.visible {
             opacity: 1;
             transform: translateY(0) scale(1);
         }
+
         .timeline.visible::before {
             height: 100%;
         }
+
         .image-container {
             position: relative;
             cursor: pointer;
         }
+
         .image-container img {
             transition: opacity 0.3s ease-in-out;
         }
+
         .image-description {
             position: absolute;
             top: 0;
@@ -55,27 +65,32 @@
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
+
         .image-container.clicked img {
             opacity: 0.2;
         }
+
         .image-container.clicked .image-description {
             opacity: 1;
         }
     </style>
 </head>
+
 <body class="bg-gray-100 py-10">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-8">Historia de la Radio</h2>
-        <div class="timeline">
+        <div class="timeline">            
+            <!-- secciones agregadas por mi -->
+
             <div class="timeline-item relative flex items-center mb-8">
                 <div class="w-1/2 text-right pr-8">
-                    <h3 class="text-lg font-semibold">1920 - Primera Emisión</h3>
-                    <p class="text-gray-600">La primera transmisión de radio se realizó en Argentina con la ópera Parsifal.</p>
+                    <h3 class="text-lg font-semibold">1987 - Se instala la primera antena</h3>
+                    <p class="text-gray-600">la radio comienza a transmitir por primera vez.</p>
                 </div>
                 <div class="w-1/2 flex justify-center">
                     <div class="image-container" onclick="toggleDescription(this)">
-                        <img src="radio-1920.jpg" alt="Radio 1920" class="w-32 h-32 rounded-lg shadow-md">
-                        <div class="image-description">La primera transmisión radial de la historia.</div>
+                        <img src="radio-1920.jpg" alt="primera antena" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">Marcó el inicio de la presencia de la radio en la comunidad.</div>
                     </div>
                 </div>
             </div>
@@ -83,19 +98,213 @@
                 <div class="w-1/2 flex justify-center">
                     <div class="image-container" onclick="toggleDescription(this)">
                         <img src="radio-1930.jpg" alt="Radio 1930" class="w-32 h-32 rounded-lg shadow-md">
-                        <div class="image-description">Inicio de las radios comerciales con programación regular.</div>
+                        <div class="image-description">foto del nuevo equipo de locutores y operadores.</div>
                     </div>
                 </div>
                 <div class="w-1/2 pl-8">
-                    <h3 class="text-lg font-semibold">1930 - Radios Comerciales</h3>
-                    <p class="text-gray-600">Surgen las primeras emisoras comerciales con programación regular.</p>
+                    <h3 class="text-lg font-semibold">1988 - Incorporación de locutores y operadores</h3>
+                    <p class="text-gray-600"> Mejora en la calidad de la programación.</p>
                 </div>
             </div>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 text-right pr-8">
+                    <h3 class="text-lg font-semibold">1992 - Radio más escuchada</h3>
+                    <p class="text-gray-600">La radio se posiciona en el primer lugar del ranking de radios más escuchadas de Salta.</p>
+                </div>
+                <div class="w-1/2 flex justify-center">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1920.jpg" alt="primera antena" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">Consolidación como líder en el ámbito radial.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 flex justify-center">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1930.jpg" alt="Radio 1930" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">Reconocimiento por ser la radio mas escuchada de Salta</div>
+                    </div>
+                </div>
+                <div class="w-1/2 pl-8">
+                    <h3 class="text-lg font-semibold">1995 - Premio disco de oro</h3>
+                    <p class="text-gray-600">La radio FM del Milagro recibe un reconocimiento a la radio mas escuchada.</p>
+                </div>
+            </div>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 text-right pr-8">
+                    <h3 class="text-lg font-semibold">1996 - Evento social</h3>
+                    <p class="text-gray-600">se realiza un baile en Salta, convirtiendose en unos de los eventos del año</p>
+                </div>
+                <div class="w-1/2 flex justify-center">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1920.jpg" alt="primera antena" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">baile en Salta club.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 flex justify-center">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1930.jpg" alt="Radio 1930" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">Reconocimiento por ser la radio mas escuchada de Salta</div>
+                    </div>
+                </div>
+                <div class="w-1/2 pl-8">
+                    <h3 class="text-lg font-semibold">1997/2007 - 10 años en primeros puestos</h3>
+                    <p class="text-gray-600"> La radio continúa en los puestos más altos de las radios más escuchadas.
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 text-right pr-8">
+                    <h3 class="text-lg font-semibold">2008 - Nuevo programa</h3>
+                    <p class="text-gray-600">Comienza el programa "Rincón infantil" con la conducción de Karlita Comparada a sus 7 años.</p>
+                </div>
+                <div class="w-1/2 flex justify-center">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1920.jpg" alt="primera antena" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">baile en Salta club.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 flex justify-center">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1930.jpg" alt="Radio 1930" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">Reconocimiento por ser la radio mas escuchada de Salta</div>
+                    </div>
+                </div>
+                <div class="w-1/2 pl-8">
+                    <h3 class="text-lg font-semibold">2009 - Personalizaciones</h3>
+                    <p class="text-gray-600">Se introducen las frases "comienzo de espacio publicitario" y "fin de espacio publicitario" con las voces de Karlita y Macarena Comparada.</p>
+                </div>
+            </div>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 text-right pr-8">
+                    <h3 class="text-lg font-semibold">2017 - Nuevo programa</h3>
+                    <p class="text-gray-600">Comienza a transmitirse el programa "Reflexionemos juntos" conducido por Elida Cristina Coronel, logrando uno de los mayores rankings de oyentes.</p>
+                </div>
+                <div class="w-1/2 flex justify-center">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1920.jpg" alt="primera antena" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">baile en Salta club.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 flex justify-center">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1930.jpg" alt="Radio 1930" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">Reconocimiento por ser la radio mas escuchada de Salta</div>
+                    </div>
+                </div>
+                <div class="w-1/2 pl-8">
+                    <h3 class="text-lg font-semibold">2018 - Sorteo</h3>
+                    <p class="text-gray-600"> Realización del sorteo del Día de la Madre en "Reflexionemos juntos".</p>
+                </div>
+            </div>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 text-right pr-8">
+                    <h3 class="text-lg font-semibold">2017 - Nuevo programa</h3>
+                    <p class="text-gray-600">Comienza a transmitirse el programa "Reflexionemos juntos" conducido por Elida Cristina Coronel, logrando uno de los mayores rankings de oyentes.</p>
+                </div>
+                <div class="w-1/2 flex justify-center">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1920.jpg" alt="primera antena" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">baile en Salta club.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 flex justify-center">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1930.jpg" alt="Radio 1930" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">Reconocimiento por ser la radio mas escuchada de Salta</div>
+                    </div>
+                </div>
+                <div class="w-1/2 pl-8">
+                    <h3 class="text-lg font-semibold">2018 - Sorteo</h3>
+                    <p class="text-gray-600"> Realización del sorteo del Día de la Madre en "Reflexionemos juntos".</p>
+                </div>
+            </div>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 text-right pr-8">
+                    <h3 class="text-lg font-semibold">2020 - Nace "Red Debut"</h3>
+                    <p class="text-gray-600">dirigido por Karlita Comparada, destinado a los jóvenes, que destrona a "Reflexionemos juntos" en audiencia..</p>
+                </div>
+                <div class="w-1/2 flex justify-center">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1920.jpg" alt="primera antena" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">baile en Salta club.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 flex justify-center">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1930.jpg" alt="Radio 1930" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">Reconocimiento por ser la radio mas escuchada de Salta</div>
+                    </div>
+                </div>
+                <div class="w-1/2 pl-8">
+                    <h3 class="text-lg font-semibold">2021 - Gran sorteo</h3>
+                    <p class="text-gray-600">Sorteo del programa "Red Debut" con más de 5000 personas anotadas.</p>
+                </div>
+            </div>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 text-right pr-8">
+                    <h3 class="text-lg font-semibold">2022 - Segundo gran sorteo</h3>
+                    <p class="text-gray-600">"Reflexionemos juntos" realiza el sorteo del año, con múltiples ganadores.</p>
+                </div>
+                <div class="w-1/2 flex justify-center">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1920.jpg" alt="primera antena" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">baile en Salta club.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 flex justify-center">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1930.jpg" alt="Radio 1930" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">Reconocimiento por ser la radio mas escuchada de Salta</div>
+                    </div>
+                </div>
+                <div class="w-1/2 pl-8">
+                    <h3 class="text-lg font-semibold">2023 - Nuevas Voces</h3>
+                    <p class="text-gray-600">Karlita Comparada y Ulises Rodriguez empiezan a formar la idea de un proyecto innovador y único en su estilo. </p>
+                </div>
+            </div>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 text-right pr-8">
+                    <h3 class="text-lg font-semibold">2024/2025 - Nuevo alcance</h3>
+                    <p class="text-gray-600">La radio comienza a transmitir via internet</p>
+                </div>
+                <div class="w-1/2 flex justify-center">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1920.jpg" alt="primera antena" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">baile en Salta club.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item relative flex items-center mb-8">
+                <div class="w-1/2 flex justify-center">
+                    <div class="image-container" onclick="toggleDescription(this)">
+                        <img src="radio-1930.jpg" alt="Radio 1930" class="w-32 h-32 rounded-lg shadow-md">
+                        <div class="image-description">Reconocimiento por ser la radio mas escuchada de Salta</div>
+                    </div>
+                </div>
+                <div class="w-1/2 pl-8">
+                    <h3 class="text-lg font-semibold">2025 - Nuevo programa "Nuevas voces"</h3>
+                    <p class="text-gray-600">Comienzo del programa "Nuevas Voces", dirigido por Karlita Comparada y Ulises Rodríguez.</p>
+                </div>
+            </div>
+            
         </div>
     </div>
-    
+
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const items = document.querySelectorAll(".timeline-item, .about-item");
             function checkVisibility() {
                 const triggerBottom = window.innerHeight * 0.9;
@@ -115,4 +324,5 @@
         }
     </script>
 </body>
+
 </html>
