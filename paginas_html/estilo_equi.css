@@ -122,15 +122,27 @@ html {
   }
   
   .flip-box-header {
+    position: relative;
+    top: 150px;
+    color: #fff;
     font-size: 34px;
   }
   
   .flip-box p {
+    position: relative;
+    top: 120px;
+    color: #fff;
     font-size: 20px;
     line-height: 1.5em;
   }
+
+  .flip-box .p-back{
+    position: relative;
+    top: -40px;
+  }
   
   .flip-box-img {
+    display: none;
     margin-top: 25px;
   }
   
